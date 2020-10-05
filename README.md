@@ -4,11 +4,15 @@ The goal of this project was to recreate a database similar to that of Instagram
 
 The first step in achieving this goal was laying out the schema out our future database.
 
-When you take a look at Instagram what do you see?
+When taking a look at Instagram what can be seen?
+
 
 ![](Images/Image%20Section.jpg)
 
--pictures
+
+-users
+
+-photos/pictures
 
 -likes
 
@@ -16,7 +20,16 @@ When you take a look at Instagram what do you see?
 
 -hashtags
 
+
+Instagram also stores...
+
+
 ![](Images/User%20Section.jpg)
+
+
+-followers
+
+-followees
 
 
 
