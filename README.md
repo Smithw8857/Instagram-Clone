@@ -1,6 +1,6 @@
 # Instagram-Clone
 
-##The goal of this project was to recreate a database similar to that of Instagram's 
+## The goal of this project was to recreate a database similar to that of Instagram's 
 
 The first step in achieving this goal was laying out the schema out our future database.
 
