@@ -11,4 +11,4 @@ The goal of this project was to recreate a database similar to that of Instagram
 name | age | email
 -----|-----|----------
  Joe | 22  | www@gmail
- ----|-----|----------
+ Will| 28  | ws@gamil.com
