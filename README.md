@@ -9,8 +9,11 @@ When you take a look at Instagram what do you see?
 ![](Images/Image%20Section.jpg)
 
 -pictures
+
 -likes
+
 -comments
+
 -hashtags
 
 ![](Images/User%20Section.jpg)
