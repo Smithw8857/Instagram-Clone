@@ -5,3 +5,10 @@ The goal of this project was to recreate a database similar to that of Instagram
 ![](Images/Image%20Section.jpg)
 
 ![](Images/User%20Section.jpg)
+
+
+
+name | age | email
+-----|-----|----------
+ Joe | 22  | www@gmail
+ ----|-----|----------
