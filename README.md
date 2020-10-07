@@ -4,7 +4,7 @@
 
 The first step in achieving this goal was laying out the schema design for our future database.
 
-**Taking a look at Instagram and its structure assisted me in laying out what tables needed to be created as well as how each table would relate to one another**
+**Taking a look at Instagram and its structure assisted me in laying out what tables needed to be created, their structure and how each table would relate to one another**
 
 
 ![](Images/Image%20Section.jpg)
@@ -54,7 +54,7 @@ The first step in achieving this goal was laying out the schema design for our f
 -----------|------|-------|-------------|
 **id** | int | auto_increment | primary key | 
 **image_url** | varchar(255) | not null |
-**user_id** | int not null | foreign key |
+**user_id** | int | not null | foreign key |
 **created_at** | timestamp |
 
 
