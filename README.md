@@ -44,9 +44,9 @@ The first step in achieving this goal was laying out the schema design for our f
 
 ### *Photos Table**
 
-**photos** |      |         |
------------|------|---------|
-id         | 
-image_url  |
-user_id    |
-created_at |
+**photos** |
+-----------|
+**id**    int, auto_increment, primary key        | 
+**image_url**    varchar(255), not null   |
+**user_id**    int, not null, foreign key    |
+**created_at**    timestamp |
