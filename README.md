@@ -78,7 +78,7 @@ The first step in achieving this goal was laying out the schema design for our f
 **created_at** | timestamp |
 
 
-### **Follows Table**
+#### **Follows Table**
 
 **follows** |      |       |        |        |
 ------------|------|-------|--------|--------|
@@ -86,6 +86,9 @@ The first step in achieving this goal was laying out the schema design for our f
 **followee_id** | int | not null | foreign key | primary key |
 **created_at** | timestamp |
 
+
+
+#### Hashtag Tables
 
 
 
