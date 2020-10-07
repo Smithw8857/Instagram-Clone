@@ -2,12 +2,18 @@
 
 ## The goal of this project was to recreate a database similar to that of Instagram's 
 
-The first step in achieving this goal was laying out the schema out our future database.
+The first step in achieving this goal was laying out the schema for our future database.
 
-**When taking a look at Instagram what can be seen?**
+**Taking a look at Instagram and its structure assisted me in laying out what tables needed to be created as well as how each table to relate with one another**
 
+**As seen below Instagram stores**
 
 ![](Images/Image%20Section.jpg)
+![](Images/User%20Section.jpg)
+
+
+
+**As seen above, Instagram stores**
 
 
 -users
@@ -19,13 +25,6 @@ The first step in achieving this goal was laying out the schema out our future d
 -comments
 
 -hashtags
-
-
-**Instagram also stores...**
-
-
-![](Images/User%20Section.jpg)
-
 
 -followers
 
