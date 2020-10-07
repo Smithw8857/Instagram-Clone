@@ -78,6 +78,15 @@ The first step in achieving this goal was laying out the schema design for our f
 **created_at** | timestamp |
 
 
+### **Follows Table**
+
+**follows** |      |       |        |        |
+------------|------|-------|--------|--------|
+**follower_id** | int | not null | foreign key | primary key |
+**followee_id** | int | not null | foreign key | primary key |
+**created_at** | timestamp |
+
+
 
 
 
