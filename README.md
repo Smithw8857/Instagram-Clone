@@ -35,9 +35,11 @@ The first step in achieving this goal was laying out the schema design for our f
 
 ## Users Table
 
-**users** | Data Type | key
-----------|-----------|------
-  id      |   int     |   primary key    
+**users** | 
+----------|
+  id      |
+  username|
+  created_at|
  
 
 
