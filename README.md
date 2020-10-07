@@ -33,7 +33,7 @@ The first step in achieving this goal was laying out the schema design for our f
 **In order to achieve my goal, I would need to create tables representing these elements in my database**
 
 
-### *Users Table*
+### **Users Table**
 
 **users** |     |            |     |
 ----------|-----|------------|-----|
@@ -42,7 +42,7 @@ The first step in achieving this goal was laying out the schema design for our f
   **created_at** | timestamp | 
  
 
-### *Photos Table**
+### **Photos Table**
 
 **photos** |      |       |             |
 -----------|------|-------|-------------|
