@@ -37,9 +37,9 @@ The first step in achieving this goal was laying out the schema design for our f
 
 **users** | 
 ----------|
-  id      |
-  username|
-  created_at|
+  id      | int | primary key
+  username| varchar | unique
+  created_at| timestamp | 
  
 
 
