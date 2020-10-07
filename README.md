@@ -37,7 +37,7 @@ The first step in achieving this goal was laying out the schema design for our f
 
 **users** | Data Type | key
 ---------------------------
-  id         int        primary key    
+  id      |   int     |   primary key    
  
 
 
