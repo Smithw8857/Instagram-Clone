@@ -69,6 +69,15 @@ The first step in achieving this goal was laying out the schema design for our f
 **created_at** | timestamp |
 
 
+#### **Likes Table**
+
+**likes** |      |      |        |
+----------|------|------|--------|
+**user_id** | int | not null | foreign key
+**photo_id** | int | not null | foreign key
+**created_at** | timestamp |
+
+
 
 
 
