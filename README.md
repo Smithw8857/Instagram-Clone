@@ -30,4 +30,10 @@ The first step in achieving this goal was laying out the schema for our future d
 -followees
 
 
+**In order to achieve my goal, I would need to create these elements as tables in my database**
+
+
+##Users Table
+
+
 
