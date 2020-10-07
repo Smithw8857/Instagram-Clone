@@ -56,3 +56,25 @@ The first step in achieving this goal was laying out the schema design for our f
 **image_url** | varchar(255) | not null |
 **user_id** | int not null | foreign key |
 **created_at** | timestamp |
+
+
+#### **Comments Table**
+
+**comments** |     |     |         |
+-------------|-----|-----|---------|
+**id** | int | auto_increment | primary key |
+**comment_text** | varchar(255) | not null|
+**user_id** | int | not null | foreign key
+**photo_id** | int | not null | primary key
+**created_at** | timestamp |
+
+
+
+
+
+
+
+
+
+
+
