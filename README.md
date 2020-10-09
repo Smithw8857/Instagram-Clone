@@ -90,6 +90,19 @@ The first step in achieving this goal was laying out the schema design for our f
 
 #### Hashtag Tables
 
+**tags** |      |       |         |
+---------|------|-------|---------|
+**id** | int | auto increment | primary key |
+**tag_name** | varchar(255) | unique |
+**created_at** | timestamp | 
+
+
+
+**photo_tags** |       |      |        |         |
+---------|-------|------|--------|---------|
+**photo_id** | int | not null | foreign key| primary key |
+**tag_id** | int | not null | foriegn key | primary key |
+
 
 
 
