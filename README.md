@@ -129,10 +129,10 @@ Next, I created the likes table.
 
 #### **Likes Table**
 
-**likes** |      |      |        |
-:----------:|:------:|:------:|:--------:|
-**user_id** | int | not null | foreign key references users(id) |
-**photo_id** | int | not null | foreign key references photos(id) |
+**likes** |      |      |        |            |
+:----------:|:------:|:------:|:--------:|:-----:|
+**user_id** | int | not null | foreign key references users(id) | primary key |
+**photo_id** | int | not null | foreign key references photos(id) | primary key |
 **created_at** | timestamp default(now) |
 
 **The likes table contains 3 columns**
@@ -142,9 +142,10 @@ Next, I created the likes table.
    
 **This table's goal is to store each individual like by the user who likes a photo, the photo that is being liked as well as the date and time a like is made**
 
-The **user_id** column allows us to see which user made each stored like represented by their user id. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each like made to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **likes** table to store which user liked a photo, signified by their **id** number stored in the **users** table.
+The **user_id** column allows us to see which user made each stored like represented by their user id. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each like made to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **likes** table to store which user liked a photo, signified by their **id** number stored in the **users** table. **user_id** is also a primary key, preventing users from liking the same photo more than once.
 
-The **photo_id** column allows us to see which photo the like was made in reference to represented by a photo id. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each like to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **likes** table to relate each photo to a like.
+The **photo_id** column allows us to see which photo the like was made in reference to represented by a photo id. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each like to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **likes** table to relate each photo to a like. **photo_id** is also a primary key, preventing the same photo from recieving multiple likes from one user
+
 
 The **created_at column** is to mark the date and time a like is made. The column is set to be a timestamp. When a new like is made, the timestamp value will default to the current time and date that the like was made.
 
@@ -155,7 +156,7 @@ The **created_at column** is to mark the date and time a like is made. The colum
 :------------:|:------:|:-------:|:--------:|:--------:|
 **follower_id** | int | not null | foreign key references users(id)| primary key |
 **followee_id** | int | not null | foreign key references users(id) | primary key |
-**created_at** | timestamp |
+**created_at** | timestamp default(now) |
 
 
 **The follows table contains 3 columns**
@@ -165,14 +166,16 @@ The **created_at column** is to mark the date and time a like is made. The colum
    
 **This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
 
-The **follower_id** column allows us to see which user is following someone, represented by the follower's user id. The column is set to not null, requiring a value to be filled in the **follower_id** column, therefore requiring each follow made to be from a user in the database. This is achieved by making the **follower_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user followed someone, signified by their **id** number stored in the **users** table
+The **follower_id** column allows us to see which user is following someone, represented by the follower's user id. The column is set to not null, requiring a value to be filled in the **follower_id** column, therefore requiring each follow made to be from a user in the database. This is achieved by making the **follower_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user followed someone, signified by their **id** number stored in the **users** table. **follower_id** is also a primary key, preventing users from following the same user multiple times.
 
-The **followee_id** column allows us to see which user has recieved the follow, represented by the followee's user id. The column is set to not null, requiring a value to be filled in the **followee_id** column, therefore requiring each follow made to be related to a user in the database. This is achieved by making the **followee_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user recieved a follow, signified by their **id** number stored in the **users** table
+The **followee_id** column allows us to see which user has recieved the follow, represented by the followee's user id. The column is set to not null, requiring a value to be filled in the **followee_id** column, therefore requiring each follow made to be related to a user in the database. This is achieved by making the **followee_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user recieved a follow, signified by their **id** number stored in the **users** table. **followee_id** is a primary key, preventing a user from recieving multiple follows from the same user.
 
 The **created_at column** is to mark the date and time a follow is made. The column is set to be a timestamp. When a new follow is made, the timestamp value will default to the current time and date that the follow was made.
 
 
 #### Hashtag Tables
+
+**The process of storing hashtags proved to be a bit of a challenge but was achieved by creating two separate tables. One table (tags) stores all the hashtags made and assigning them an id. The other table (pho stores which photos are taged with corresponding hashtags using photo_id and tag_id.**  
 
 **tags** |      |       |         |
 :---------:|:------:|:-------:|:---------:|
@@ -180,6 +183,12 @@ The **created_at column** is to mark the date and time a follow is made. The col
 **tag_name** | varchar(255) | unique |
 **created_at** | timestamp | 
 
+**The tags table contains 3 columns**
+   - an id column
+   - a tag_name column
+   - a created_at column
+
+**This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
 
 
 **photo_tags** |       |      |        |         |
@@ -187,6 +196,12 @@ The **created_at column** is to mark the date and time a follow is made. The col
 **photo_id** | int | not null | foreign key| primary key |
 **tag_id** | int | not null | foriegn key | primary key |
 
+**The photo_tags table contains 2 columns**
+   - a photo_id column
+   - a tag_id column
+   
+**This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
+   
 
 
 
