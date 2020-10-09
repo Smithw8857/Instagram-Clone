@@ -44,7 +44,7 @@ The first step in achieving this goal was laying out the schema design for our f
 :----------:|:-----:|:------------:|:-----:|
   **id**      | int | auto_increment | primary key
   **username** | varchar(255) | unique
-  **created_at** | timestamp | 
+  **created_at** | timestamp default(now) | 
  
 
 My first step in creating an Instagram database was to create a table to store users
@@ -52,10 +52,13 @@ My first step in creating an Instagram database was to create a table to store u
  **The users table contains 3 columns**
    - an id column
    - a username column
-   - a created at column
+   - a created_at column
    
+The id column is set to auto increment, allowing each new stored user to be autmatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
+The username column is set to be unique, requiring each username to be distinct
 
+The created_at column is set to be a timestamp, when a new user is entered the timestamp value will default to the current time and date that the user was entered
 
 
 
