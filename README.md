@@ -15,19 +15,19 @@ The first step in achieving this goal was laying out the schema design for our f
 **As seen above, Instagram stores**
 
 
--users
+  -users
 
--photos/pictures
+  -photos/pictures
 
--likes
+  -likes
 
--comments
+  -comments
 
--hashtags
+  -hashtags
 
--followers
+  -followers
 
--followees
+  -followees
 
 
 **In order to achieve my goal, I would need to create tables representing these elements in my database**
@@ -50,7 +50,7 @@ The first step in achieving this goal was laying out the schema design for our f
 
 My first step in creating an Instagram database was to create a table to store users
 
- This table contains 3 columns
+ **The users table contains 3 columns**
    - an id column
    - a username column
    - a created at column
