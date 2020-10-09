@@ -84,13 +84,13 @@ Next, I created the photos table.
 **This table's goal is to store and display each individual photo using an id number, their image url, the user who submitted the photo as well as the date and time the photo was submitted**
 
 
-The **id** column is set to auto increment, allowing each new stored photo to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+The **id** gives each photo a unique id number. The column is set to auto increment, allowing each new stored photo to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
-The **image_url** column is set to not null, requiring a value to be filled in the image_url column
+The **image_url** displays the url for each image. The column is set to not null, requiring a value to be filled in the image_url column
 
-The **user_id** column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each photo submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the photos table to not only store the information of each inserted photo, but also store which user submitted each photo, signified by their **id** number stored in the **users** table.
+The **user_id** column allows to see who posted a photo referenced by thier user id. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each photo submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the photos table to not only store the information of each inserted photo, but also store which user submitted each photo, signified by their **id** number stored in the **users** table.
 
-The **created_at column** is set to be a timestamp. When a new photo is entered the timestamp value will default to the current time and date that the photo was entered.
+The **created_at column** is to mark a date and time a photo is posted. The column is set to be a timestamp. When a new photo is entered, the timestamp value will default to the current time and date that the photo was entered.
 
 I required values from both the users and photos tables in order to create a proper comments and likes table. With those completed, I started creating the table that would store user comments.  
 
@@ -117,31 +117,59 @@ I required values from both the users and photos tables in order to create a pro
 
 The **id** column gives each stored comment a unique id number. The column is set to auto increment, allowing each new stored comment to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
-The **comment_text** column is set to not null, requiring a value to be filled in the **comment_text** column preventing users from submitting any blank comments.
+The **comment_text** displays the text of each comment. The comment_text column is set to not null, requiring a value to be filled in the **comment_text** column preventing users from submitting any blank comments.
 
-The **user_id** column allows us to see which user made each stored comment. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each comment submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **comments** table to not only store each comment made, but also store which user wrote each, signified by their **id** number stored in the **users** table.
+The **user_id** column allows us to see which user made each stored comment represented by a user id. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each comment submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **comments** table to not only store each comment made, but also store which user wrote each, signified by their **id** number stored in the **users** table.
 
-The **photo_id** column allows us to see which photo each stored comment was made in reference to. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each comment submitted to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **comments** table to store which photo each comment was made on.
+The **photo_id** column allows us to see which photo each stored comment was made in reference to represented by a photo id. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each comment submitted to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **comments** table to store which photo each comment was made on.
 
-The **created_at column** is to mark the date and time a comment is made. The column is set to be a timestamp. When a new comment is written the timestamp value will default to the current time and date that the comment was entered.
+The **created_at column** is to mark the date and time a comment is made. The column is set to be a timestamp. When a new comment is written, the timestamp value will default to the current time and date that the comment was entered.
+
+Next, I created the likes table.
 
 #### **Likes Table**
 
 **likes** |      |      |        |
 :----------:|:------:|:------:|:--------:|
-**user_id** | int | not null | foreign key
-**photo_id** | int | not null | foreign key
-**created_at** | timestamp |
+**user_id** | int | not null | foreign key references users(id) |
+**photo_id** | int | not null | foreign key references photos(id) |
+**created_at** | timestamp default(now) |
+
+**The likes table contains 3 columns**
+   - a user_id column
+   - a photo_id column
+   - a created_at column
+   
+**This table's goal is to store each individual like by the user who likes a photo, the photo that is being liked as well as the date and time a like is made**
+
+The **user_id** column allows us to see which user made each stored like represented by their user id. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each like made to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **likes** table to store which user liked a photo, signified by their **id** number stored in the **users** table.
+
+The **photo_id** column allows us to see which photo the like was made in reference to represented by a photo id. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each like to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **likes** table to relate each photo to a like.
+
+The **created_at column** is to mark the date and time a like is made. The column is set to be a timestamp. When a new like is made, the timestamp value will default to the current time and date that the like was made.
 
 
 #### **Follows Table**
 
 **follows** |      |       |        |        |
 :------------:|:------:|:-------:|:--------:|:--------:|
-**follower_id** | int | not null | foreign key | primary key |
-**followee_id** | int | not null | foreign key | primary key |
+**follower_id** | int | not null | foreign key references users(id)| primary key |
+**followee_id** | int | not null | foreign key references users(id) | primary key |
 **created_at** | timestamp |
 
+
+**The follows table contains 3 columns**
+   - a follower_id column
+   - a followee_id column
+   - a created_at column
+   
+**This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
+
+The **follower_id** column allows us to see which user is following someone, represented by the follower's user id. The column is set to not null, requiring a value to be filled in the **follower_id** column, therefore requiring each follow made to be from a user in the database. This is achieved by making the **follower_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user followed someone, signified by their **id** number stored in the **users** table
+
+The **followee_id** column allows us to see which user has recieved the follow, represented by the followee's user id. The column is set to not null, requiring a value to be filled in the **followee_id** column, therefore requiring each follow made to be related to a user in the database. This is achieved by making the **followee_id** column a foreign key that references the **id** column from the **users** table. This allows the **follows** table to store which user recieved a follow, signified by their **id** number stored in the **users** table
+
+The **created_at column** is to mark the date and time a follow is made. The column is set to be a timestamp. When a new follow is made, the timestamp value will default to the current time and date that the follow was made.
 
 
 #### Hashtag Tables
