@@ -41,7 +41,7 @@ The first step in achieving this goal was laying out the schema design for our f
 #### **Users Table**
 
 **users** |     |            |     |
-----------|-----|------------|-----|
+:----------:|:-----:|:------------:|:-----:|
   **id**      | int | auto_increment | primary key
   **username** | varchar(255) | unique
   **created_at** | timestamp | 
