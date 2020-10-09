@@ -54,11 +54,13 @@ My first step in creating an Instagram database was to create a table to store u
    - a username column
    - a created_at column
    
-The **id** column is set to auto increment, allowing each new stored user to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+**This table's goal is to store and display each individual user by an id number, their username as well as the date and time the user's account was created**
+   
+The **id** column gives each user a unique id number. The column is set to auto increment, allowing each new stored user to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
-The **username** column is set to be unique, requiring each username to be distinct.
+The **username** column stores each username. The column is set to be unique, requiring each username to be distinct.
 
-The **created_at** column is set to be a timestamp. When a new user is entered the timestamp value will default to the current time and date that the user was entered.
+The **created_at** column is to mark a date and time a user is created. The column is set to be a timestamp. When a new user is entered the timestamp value will default to the current time and date that the user was entered.
 
 
 Next, I created the photos table.
@@ -73,11 +75,13 @@ Next, I created the photos table.
 **created_at** | timestamp default(now) |
 
 
-**The photos table contains 3 columns**
+**The photos table contains 4 columns**
    - an id column
    - an image_url column
    - a user_id column
    - a created_at column
+
+**This table's goal is to store and display each individual photo using an id number, their image url, the user who submitted the photo as well as the date and time the photo was submitted**
 
 
 The **id** column is set to auto increment, allowing each new stored photo to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
@@ -101,17 +105,17 @@ I required values from both the users and photos tables in order to create a pro
 **photo_id** | int | not null | foreign key references photos(id) | 
 **created_at** | timestamp default(now) |
 
-**The comments table contains 3 columns**
+**The comments table contains 5 columns**
    - an id column
    - an comment_text column
    - a user_id column
    - a photo_id column
    - a created_at column
    
-##### This table's goal is to store and individually list each comment made on a photo, who submitted the comment, which photo it was submitted on as well as the date and time the comment was created at 
+**This table's goal is to store and display each comment made on a photo, who submitted the comment, which photo it was submitted on as well as the date and time the comment was created at** 
 
 
-The **id** column gives each stored comment an individual id number. The column is set to auto increment, allowing each new stored comment to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+The **id** column gives each stored comment a unique id number. The column is set to auto increment, allowing each new stored comment to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
 The **comment_text** column is set to not null, requiring a value to be filled in the **comment_text** column preventing users from submitting any blank comments.
 
@@ -119,7 +123,7 @@ The **user_id** column allows us to see which user made each stored comment. The
 
 The **photo_id** column allows us to see which photo each stored comment was made in reference to. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each comment submitted to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **comments** table to store which photo each comment was made on.
 
-The **created_at column** is set to be a timestamp. When a new comment is written the timestamp value will default to the current time and date that the comment was entered.
+The **created_at column** is to mark the date and time a comment is made. The column is set to be a timestamp. When a new comment is written the timestamp value will default to the current time and date that the comment was entered.
 
 #### **Likes Table**
 
