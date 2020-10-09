@@ -15,19 +15,19 @@ The first step in achieving this goal was laying out the schema design for our f
 **As seen above, Instagram stores**
 
 
-  -users
+     -users
 
-  -photos/pictures
+     -photos/pictures
 
-  -likes
+      -likes
 
-  -comments
+      -comments
 
-  -hashtags
+      -hashtags
 
-  -followers
+      -followers
 
-  -followees
+      -followees
 
 
 **In order to achieve my goal, I would need to create tables representing these elements in my database**
