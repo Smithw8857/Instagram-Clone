@@ -58,7 +58,7 @@ The **id** column is set to auto increment, allowing each new stored user to be 
 
 The **username** column is set to be unique, requiring each username to be distinct.
 
-The **created_at column** is set to be a timestamp. When a new user is entered the timestamp value will default to the current time and date that the user was entered.
+The **created_at** column is set to be a timestamp. When a new user is entered the timestamp value will default to the current time and date that the user was entered.
 
 
 Next, I created the photos table.
@@ -99,6 +99,13 @@ The **created_at column** is set to be a timestamp. When a new photo is entered 
 **user_id** | int | not null | foreign key
 **photo_id** | int | not null | primary key
 **created_at** | timestamp default(now) |
+
+**The comments table contains 3 columns**
+   - an id column
+   - an comment_text column
+   - a user_id column
+   - a photo_id column
+   - a created_at column
 
 
 #### **Likes Table**
