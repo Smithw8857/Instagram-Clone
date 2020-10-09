@@ -88,7 +88,7 @@ The **user_id** column is set to not null, requiring a value to be filled in the
 
 The **created_at column** is set to be a timestamp. When a new photo is entered the timestamp value will default to the current time and date that the photo was entered.
 
-I required values from both the users and photos tables in order to create a proper comments table. With those completed, I started creating the table that would store user comments.  
+I required values from both the users and photos tables in order to create a proper comments and likes table. With those completed, I started creating the table that would store user comments.  
 
 
 #### **Comments Table**
@@ -107,15 +107,17 @@ I required values from both the users and photos tables in order to create a pro
    - a user_id column
    - a photo_id column
    - a created_at column
+   
+##### This table's goal is to store and individually list each comment made on a photo, who submitted the comment, which photo it was submitted on as well as the date and time the comment was created at 
 
 
-The **id** column is set to auto increment, allowing each new stored comment to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+The **id** column gives each stored comment an individual id number. The column is set to auto increment, allowing each new stored comment to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
 The **comment_text** column is set to not null, requiring a value to be filled in the **comment_text** column preventing users from submitting any blank comments.
 
-The **user_id** column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each comment submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the comments table to not only store each comment made, but also store which user wrote each, signified by their **id** number stored in the **users** table.
+The **user_id** column allows us to see which user made each stored comment. The column is set to not null, requiring a value to be filled in the **user_id** column, therefore requiring each comment submitted to be related to a user in the database. This is achieved by making the **user_id** column a foreign key that references the **id** column from the **users** table. This allows the **comments** table to not only store each comment made, but also store which user wrote each, signified by their **id** number stored in the **users** table.
 
-The **photo_id** column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each comment submitted to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the comments table to store which user made the comment as well as which photo the comment was made on.
+The **photo_id** column allows us to see which photo each stored comment was made in reference to. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each comment submitted to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **comments** table to store which photo each comment was made on.
 
 The **created_at column** is set to be a timestamp. When a new comment is written the timestamp value will default to the current time and date that the comment was entered.
 
