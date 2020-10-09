@@ -48,6 +48,18 @@ The first step in achieving this goal was laying out the schema design for our f
   **created_at** | timestamp | 
  
 
+My first step in creating an Instagram database was to create a table to store users
+
+ This table contains 3 columns
+   - an id column
+   - a username column
+   - a created at column
+   
+
+
+
+
+
 #### **Photos Table**
 
 **photos** |      |       |             |
