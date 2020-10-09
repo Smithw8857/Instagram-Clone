@@ -62,7 +62,7 @@ My first step in creating an Instagram database was to create a table to store u
 #### **Photos Table**
 
 **photos** |      |       |             |
------------|------|-------|-------------|
+:-----------:|:------:|:-------:|:-------------:|
 **id** | int | auto_increment | primary key | 
 **image_url** | varchar(255) | not null |
 **user_id** | int | not null | foreign key |
@@ -72,7 +72,7 @@ My first step in creating an Instagram database was to create a table to store u
 #### **Comments Table**
 
 **comments** |     |     |         |
--------------|-----|-----|---------|
+:-------------:|:-----:|:-----:|:---------:|
 **id** | int | auto_increment | primary key |
 **comment_text** | varchar(255) | not null|
 **user_id** | int | not null | foreign key
@@ -83,7 +83,7 @@ My first step in creating an Instagram database was to create a table to store u
 #### **Likes Table**
 
 **likes** |      |      |        |
-----------|------|------|--------|
+:----------:|:------:|:------:|:--------:|
 **user_id** | int | not null | foreign key
 **photo_id** | int | not null | foreign key
 **created_at** | timestamp |
@@ -92,7 +92,7 @@ My first step in creating an Instagram database was to create a table to store u
 #### **Follows Table**
 
 **follows** |      |       |        |        |
-------------|------|-------|--------|--------|
+:------------:|:------:|:-------:|:--------:|:--------:|
 **follower_id** | int | not null | foreign key | primary key |
 **followee_id** | int | not null | foreign key | primary key |
 **created_at** | timestamp |
@@ -102,7 +102,7 @@ My first step in creating an Instagram database was to create a table to store u
 #### Hashtag Tables
 
 **tags** |      |       |         |
----------|------|-------|---------|
+:---------:|:------:|:-------:|:---------:|
 **id** | int | auto increment | primary key |
 **tag_name** | varchar(255) | unique |
 **created_at** | timestamp | 
@@ -110,7 +110,7 @@ My first step in creating an Instagram database was to create a table to store u
 
 
 **photo_tags** |       |      |        |         |
----------|-------|------|--------|---------|
+:---------:|:-------:|:------:|:--------:|:---------:|
 **photo_id** | int | not null | foreign key| primary key |
 **tag_id** | int | not null | foriegn key | primary key |
 
