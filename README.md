@@ -54,13 +54,14 @@ My first step in creating an Instagram database was to create a table to store u
    - a username column
    - a created_at column
    
-The id column is set to auto increment, allowing each new stored user to be autmatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+The id column is set to auto increment, allowing each new stored user to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
 
-The username column is set to be unique, requiring each username to be distinct
+The username column is set to be unique, requiring each username to be distinct.
 
-The created_at column is set to be a timestamp, when a new user is entered the timestamp value will default to the current time and date that the user was entered
+The created_at column is set to be a timestamp. When a new user is entered the timestamp value will default to the current time and date that the user was entered.
 
 
+Next, I created the photos table.
 
 #### **Photos Table**
 
@@ -68,8 +69,25 @@ The created_at column is set to be a timestamp, when a new user is entered the t
 :-----------:|:------:|:-------:|:-------------:|
 **id** | int | auto_increment | primary key | 
 **image_url** | varchar(255) | not null |
-**user_id** | int | not null | foreign key |
-**created_at** | timestamp |
+**user_id** | int | not null | foreign key references users(id) |
+**created_at** | timestamp default(now) |
+
+
+**The photos table contains 3 columns**
+   - an id column
+   - an image_url column
+   - a user_id column
+   - a created_at column
+
+
+The photo column is set to auto increment, allowing each new stored photo to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+
+The image_url table is set to not null, requiring a value to be filled in the image_url column
+
+The user_id table is set to not null, requiring a value to be filled in the user_id column, therefore requiring each photo submitted to be related to a user in the database. This is achieved by making the user_id column a foreign key that references the id column from the users table. This allows the photos table to not only store the information of each inserted photo, but also store which user submitted each photo, signified by their user_id number.
+
+The created_at column is set to be a timestamp. When a new photo is entered the timestamp value will default to the current time and date that the user was entered.
+
 
 
 #### **Comments Table**
@@ -80,7 +98,7 @@ The created_at column is set to be a timestamp, when a new user is entered the t
 **comment_text** | varchar(255) | not null|
 **user_id** | int | not null | foreign key
 **photo_id** | int | not null | primary key
-**created_at** | timestamp |
+**created_at** | timestamp default(now) |
 
 
 #### **Likes Table**
