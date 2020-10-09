@@ -188,21 +188,30 @@ The **created_at column** is to mark the date and time a follow is made. The col
    - a tag_name column
    - a created_at column
 
-**This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
+**This table's goal is to store each hashtag into our database. This is achieved by assigning each tag a unique id, displaying the tag name as well as a date and time the tag was created first**
+
+The **id** column gives each stored tag a unique id number. The column is set to auto increment, allowing each new stored tag to be automatically issued an id number. the id column is also a primary key, requiring the id value to be unique as well as to prevent any null variables.
+
+The **tag_name** column stores each hashtag. The column is set to be unique, requiring each tag to be distinct.
+
+The **created_at column** is to mark the date and time a tag is made. The column is set to be a timestamp. When a new tag is made, the timestamp value will default to the current time and date that the tag was made.
+
 
 
 **photo_tags** |       |      |        |         |
 :---------:|:-------:|:------:|:--------:|:---------:|
-**photo_id** | int | not null | foreign key| primary key |
-**tag_id** | int | not null | foriegn key | primary key |
+**photo_id** | int | not null | foreign key references photos(id)| primary key |
+**tag_id** | int | not null | foriegn key references tags(id)| primary key |
 
 **The photo_tags table contains 2 columns**
    - a photo_id column
    - a tag_id column
    
-**This table's goal is to display users who are following other users. This is achieved by displaying a user (displayed by their user id) who follwed someone, the user (displayed by their user id) who recieved a follow as well as the date and time the follow is performed**
+**This table's goal is to display which photos have recieved which hashtags. This is achieved by displaying the photo id of the photo recieving the hashtag and the tag id of the hashtag used on the photo**
    
+The **photo_id** column allows us to see which photo has recieved the tag, represented by the photo's photo id. The column is set to not null, requiring a value to be filled in the **photo_id** column, therefore requiring each tag made to be related to a photo in the database. This is achieved by making the **photo_id** column a foreign key that references the **id** column from the **photos** table. This allows the **photo_tags** table to store which photo recieved a tag, signified by its **id** number stored in the **photos** table. **photo_id** is a primary key, preventing a photo from recieving the same tag more than once.
 
+The **tag_id** column allows us to see which tag is being used on a photo, represented by the tags's tag id. The column is set to not null, requiring a value to be filled in the **tag_id** column, therefore requiring each photo that recieves a tag, that tag is in the database. This is achieved by making the **tag_id** column a foreign key that references the **id** column from the **tags** table. This allows the **photo_tags** table to which tag a photo recieved by its **id** number stored in the **tags** table. **tag_id** is a primary key, preventing a photo from recieving the same tag more than once.
 
 
 
