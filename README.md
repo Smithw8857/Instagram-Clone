@@ -216,6 +216,7 @@ The **tag_id** column allows us to see which tag is being used on a photo, repre
 
 ### Database Diagram
 
+![](Images/Database%20Diagram.jpg)
 
 ### Inserting Data
 
