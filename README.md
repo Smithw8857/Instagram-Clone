@@ -218,7 +218,13 @@ The **tag_id** column allows us to see which tag is being used on a photo, repre
 
 ![](Images/Database%20Diagram.jpg)
 
+**Above is a database diagram to help visually represent my database and the relationships between tables** 
+
 ### Inserting Data
+
+Following the completion of all the tables in my database, I bulk inserted 500 users into my database. This data can be seen in this repository's insta_data.sql file. 
+
+### Triggers
 
 ### Working with the Data
 
