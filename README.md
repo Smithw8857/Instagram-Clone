@@ -219,9 +219,12 @@ The **tag_id** column allows us to see which tag is being used on a photo, repre
 
 ### Database Diagram
 
+
+**After laying out the schema for my database and creating it, my Instagram Clone database looks like this**
+
 ![](Images/Database%20Diagram.jpg)
 
-**Above is a database diagram to help visually represent my database and the relationships between tables** 
+**This database diagram helps to visually represent my database and the relationships between tables** 
 
 ### Inserting Data
 
