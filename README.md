@@ -239,7 +239,13 @@ These queries can be found in the insta_queries.sql file located in this reposit
 
 ### Final Thoughts
 
+Being able create an Instagram clone database was a project that I was extremely proud of accomplishing. This project pushed me as an amateur SQL coder to not only code, but to sit back and visualize how my code would work in conjunction with one another. Having to map out a schema of this size was a new, chakllenging and rewarding task.
 
+Having this database, filled with 500 users and a large amount of activity was something that was very exciting for me as well. Not only was this the largest database that I had ever worked with, but it was a database that I created.
+
+Being able to put everything I had learned to the test and manipulate my data by performing certain queries has been some of the most rewarding feelings I have had as an amateur SQL coder.
+
+Overall this project has allowed me to see the strides I have made during my as an SQL coder and has made me even more eager to take on even more challenging project to test my knowledge. 
 
 
 
