@@ -233,7 +233,9 @@ Following the completion of all the tables in my database, I bulk inserted 500 u
 
 ### Working with the Data
 
+After my users and their activity were inserted into my database, I then decided to apply the data. I performed some queries using my data that could apply to real life situations. Queries like How many times does the average user post, finding what day of the week most users register an account on, indentifying bots, etc.
 
+These queries can be found in the insta_queries.sql file located in this repository.
 
 ### Final Thoughts
 
