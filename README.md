@@ -213,6 +213,7 @@ The **photo_id** column allows us to see which photo has recieved the tag, repre
 
 The **tag_id** column allows us to see which tag is being used on a photo, represented by the tags's tag id. The column is set to not null, requiring a value to be filled in the **tag_id** column, therefore requiring each photo that recieves a tag, that tag is in the database. This is achieved by making the **tag_id** column a foreign key that references the **id** column from the **tags** table. This allows the **photo_tags** table to which tag a photo recieved by its **id** number stored in the **tags** table. **tag_id** is a primary key, preventing a photo from recieving the same tag more than once.
 
+#### The complete schema code for this database can be found in the insta_schema.sql folder located in this repository.
 
 ### Database Diagram
 
@@ -224,9 +225,10 @@ The **tag_id** column allows us to see which tag is being used on a photo, repre
 
 Following the completion of all the tables in my database, I bulk inserted 500 users into my database. This data can be seen in this repository's insta_data.sql file. 
 
-### Triggers
 
 ### Working with the Data
+
+
 
 ### Final Thoughts
 
