@@ -181,7 +181,7 @@ The **created_at column** is to mark the date and time a follow is made. The col
 :---------:|:------:|:-------:|:---------:|
 **id** | int | auto increment | primary key |
 **tag_name** | varchar(255) | unique |
-**created_at** | timestamp | 
+**created_at** | timestamp default(now) | 
 
 **The tags table contains 3 columns**
    - an id column
@@ -228,18 +228,26 @@ The **tag_id** column allows us to see which tag is being used on a photo, repre
 
 ### Inserting Data
 
-Following the completion of all the tables in my database, I bulk inserted 500 users into my database. This data can be seen in this repository's insta_data.sql file. 
+Following the completion of all the tables in my database, I bulk inserted 500 users into my database. This data can be seen in this repository's **insta_data.sql** file. 
 
 
 ### Working with the Data
 
 After my users and their activity were inserted into my database, I then decided to apply the data. I performed some queries using my data that could apply to real life situations. Queries like How many times does the average user post, finding what day of the week most users register an account on, indentifying bots, etc.
 
-These queries can be found in the insta_queries.sql file located in this repository.
+These queries can be found in the **insta_queries.sql** file located in this repository.
+
+### Further Improvements
+
+Although I am very happy with the final product of my Instagram database, there is still room for improvement.
+
+While working with Node.js during my web application project, I learned to use faker, which can auto generate random values for things ranging from emails, phone numbers, addresses etc.
+
+In the future I would like to try implementing Node.js and faker in my project to randomly generate users and their activity, as opposed to the bulk inserting of users I performed.
 
 ### Final Thoughts
 
-Being able create an Instagram clone database was a project that I was extremely proud of accomplishing. This project pushed me as an amateur SQL coder to not only code, but to sit back and visualize how my code would work in conjunction with one another. Having to map out a schema of this size was a new, chakllenging and rewarding task.
+Being able create an Instagram clone database was a project that I was extremely proud of accomplishing. This project pushed me as an amateur SQL coder to not only code, but to sit back and visualize how my code would work in conjunction with one another. Having to map out a schema of this size was a new, challenging and rewarding task.
 
 Having this database, filled with 500 users and a large amount of activity was something that was very exciting for me as well. Not only was this the largest database that I had ever worked with, but it was a database that I created.
 
